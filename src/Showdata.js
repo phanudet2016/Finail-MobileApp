@@ -16,6 +16,7 @@ import { Container, Header, Content, List, ListItem, Left, Body, Right, Thumbnai
 import Toolbar from '../app/components/Toolbar/Toolbar';
 import Addbutton from '../app/components/AddButton/AddButton';
 import { RegisterSubjectRef } from './firebase';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class Showdata extends Component {
   constructor () {
@@ -71,7 +72,7 @@ export default class Showdata extends Component {
         <List>
           <ListItem avatar>
             <Left>
-              <Thumbnail source={{ uri: 'Image URL' }} />
+            <Ionicons name="ios-contact" size={50} color='red'/>
             </Left>
             <Body>
               <Text>{RegisterSubjec.firstname} {RegisterSubjec.lastname}</Text>

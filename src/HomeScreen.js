@@ -16,8 +16,16 @@ const styles = require('../app/style');
 import Toolbar from '../app/components/Toolbar/Toolbar';
 import Addbutton from '../app/components/AddButton/AddButton';
 import { PersonalRef } from './firebase';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class HomeScreen extends Component {
+    static navigationOptions = {
+        // tabBarLable: 'Home',
+        tabBarIcon: ({ tintColor }) => (
+          <Ionicons name="md-home" size={25}  color={tintColor}/>
+        )
+      }
+
   constructor () {
     super();
     let ds = new ListView.DataSource({rowHasChanged:(r1, r2) => r1 !== r2});
