@@ -7,7 +7,7 @@ import {
   Button,
   Dimensions
 } from 'react-native';
-import { createStackNavigator } from 'react-navigation'
+import { createBottomTabNavigator  } from 'react-navigation'
 
 // Hide Warning
 import { YellowBox } from 'react-native'
@@ -18,14 +18,18 @@ import { Home } from './screenName'
 // Components
 import HomeScreen from './src/HomeScreen'
 import RegisterSubjectScreen from './src/RegisterSubject'
+import ShowdataScreen from './src/Showdata'
 
-const RootStack = createStackNavigator(
+const RootStack = createBottomTabNavigator (
   {
     Home: {
       screen: HomeScreen
     },
     RegisterSubject: {
       screen: RegisterSubjectScreen
+    },
+    Showdata: {
+      screen: ShowdataScreen
     }
   },
   {
