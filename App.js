@@ -19,6 +19,7 @@ import { Home } from './screenName'
 import HomeScreen from './src/HomeScreen'
 import RegisterSubjectScreen from './src/RegisterSubject'
 import ShowdataScreen from './src/Showdata'
+import InputGradeScreen from './src/InputGrade'
 
 const RootStack = createBottomTabNavigator (
   {
@@ -30,6 +31,9 @@ const RootStack = createBottomTabNavigator (
     },
     Showdata: {
       screen: ShowdataScreen
+    },
+    InputGrade: {
+      screen: InputGradeScreen
     }
   },
   {

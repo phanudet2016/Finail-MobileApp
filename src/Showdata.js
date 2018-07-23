@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 const styles = require('../app/style');
 
-import { Container, Header, Content, List, ListItem, Left, Body, Right, Thumbnail, Text } from 'native-base';
+import { Container, Header, Content, List, ListItem, Left, Body, Right, Thumbnail, Text, Item } from 'native-base';
 import Toolbar from '../app/components/Toolbar/Toolbar';
 import Addbutton from '../app/components/AddButton/AddButton';
 import { RegisterSubjectRef } from './firebase';
@@ -50,6 +50,7 @@ export default class Showdata extends Component {
           nameSubject: child.val().nameSubject,
           unit: child.val().unit,
           idSubject: child.val().idSubject,
+          g: child.val().grade,
           _key: child.key
         });
         this.setState({
@@ -67,6 +68,9 @@ export default class Showdata extends Component {
     //       <Text style={styles.liText}>{RegisterSubjec.firstname} {RegisterSubjec.lastname}</Text>
     //     </View>
     //   </TouchableHighlight>
+    <TouchableHighlight onPress={() => {
+        this.props.navigation.navigate('RegisterSubject')
+      }}>
       <Container>
       <Content>
         <List>
@@ -79,6 +83,7 @@ export default class Showdata extends Component {
               <Text note>รหัสวิชา: {RegisterSubjec.idSubject} </Text>
               <Text note>ชื่อวิชา: {RegisterSubjec.nameSubject} </Text>
               <Text note>หน่วยกิต: {RegisterSubjec.unit}</Text>
+              <Text note>หน่วยกิต: {RegisterSubjec.g}</Text>
             </Body>
             <Right>
               <Text note>Section {RegisterSubjec.section}</Text>
@@ -87,6 +92,7 @@ export default class Showdata extends Component {
         </List>
       </Content>
     </Container>
+    </TouchableHighlight>
     )
   }
 
